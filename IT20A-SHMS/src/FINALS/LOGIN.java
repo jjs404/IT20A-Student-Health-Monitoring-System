@@ -147,7 +147,10 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_jtuserActionPerformed
 
     private void bloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloginActionPerformed
-
+        
+        String user = jtuser.getText().trim();
+        String pass = new String(jpass.getPassword()).trim();
+    
         if (jtuser.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill ou Username");
         }else if (jpass.getText().equals("")){
@@ -155,6 +158,13 @@ public class LOGIN extends javax.swing.JFrame {
         }else if(
             jtuser.getText().contains("JoberthPalomera") && jpass.getText().contains("12345")){
             JOptionPane.showMessageDialog(null, "Login Successful");
+            
+        SHMS shmsWindow = new SHMS();
+        shmsWindow.setVisible(true);
+
+
+        this.dispose();
+        
         }else {
             JOptionPane.showMessageDialog(null, "Worng username or Password!!!","Message",JOptionPane.ERROR_MESSAGE);
         }
